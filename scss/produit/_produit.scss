@@ -1,0 +1,119 @@
+.produit {
+    padding: 0 50px;
+    margin: 50px 0;
+
+    .container {
+        display: flex;
+        margin: auto;
+        max-width: 1200px;
+    }
+
+    &__detail {
+        max-width: 600px;
+        width: 40%;
+        margin: auto;
+
+         * {
+            margin-bottom: 20px;
+        }
+    }
+    
+    &__image {
+        margin: auto;
+
+        img {
+            width: 100%;
+            box-shadow: 0px 7px 10px -8px #000000cc;
+        }
+    }
+
+    &__name {
+        font-size: 2rem;
+    }
+
+    &__price {
+        font-weight: 600;
+        font-size: 1.2rem;
+    }
+
+    &__commande {
+        margin: auto;
+        max-width: 600px;
+        width: 42%;
+        text-transform: capitalize;
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input:not([type="submit"]) {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 6px;
+            border: 2px solid hsla(0, 0%, 0%, 0.3);
+            font-size: 1.1rem;
+        }
+
+        input:nth-child(-n+2) {
+            /* if its more then 49.5% it will go down to the line like diplay:block */
+            width: 49.5%;
+        }
+
+        input:nth-child(2) {
+            float: right;
+        }
+
+        input:nth-child(n+3):not([type="submit"]):not([type="number"]) {
+            display: block;
+            width: 100%;
+        }
+
+        input[type=number] {
+            width: 70px;
+            margin-left: 10px;
+        }
+
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button {  
+           opacity: 1;
+        }
+
+        input[type="submit"] {
+            display: block;
+            padding: 15px 30px;
+            border-radius: 7px;
+            border: 2px solid #296e2c;
+            color: #fff;
+            font-size: 1.2rem;
+            background-color: #4d9350;
+            cursor: pointer;
+        }
+
+        label {
+            font-weight: bold;
+        }
+    }
+}
+
+/************* mobile design *************/
+
+@media only screen and (max-width: 760px) {
+    .produit {
+
+        .container {
+            flex-direction: column;
+        }
+
+        &__detail, &__commande {
+            width: 90%;
+            margin-bottom: 50px;
+        }
+
+        input:nth-child(-n+2) {
+            float: none;
+            width: 100%;
+        }
+    }
+    
+}
+

@@ -1,0 +1,22 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    margin: auto;
+    max-width: 1400px;
+    width: 100%;
+
+    .logo {
+        img {
+            width: 200px;
+        }
+    }
+}
+
+@media only screen and (max-width:760px) {
+    
+    header {
+        padding: 20px;
+    }
+}
