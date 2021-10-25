@@ -1,10 +1,5 @@
 :root {
-  --black: #333;
-  --green: #10cab7;
-  --blue: #00E1FF;
   --grey: #E6E6E6;
-  --bold: #2B3C47;
-  --text: #545B6B;
 }
 
 *,
@@ -16,7 +11,10 @@
   list-style: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: 'Work Sans', sans-serif;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
 }
 
 a {
@@ -25,7 +23,7 @@ a {
 
 .section-title {
   text-align: center;
-  margin: 60px 0;
+  margin: 20px 0 60px;
 }
 
 .section-title .title {
@@ -39,11 +37,25 @@ a {
   text-decoration: line-through;
 }
 
-/************* tablet design *************/
-@media only screen and (max-width: 1024px) {
-  .container {
-    padding: 0 10px;
-  }
+.commande-button {
+  width: 80%;
+  padding: 15px 20px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: 2px solid #0063cc;
+  border-radius: 7px;
+  cursor: pointer;
+  -webkit-transition-property: background-color, border-color;
+  transition-property: background-color, border-color;
+  -webkit-transition-duration: 200ms, 200ms;
+          transition-duration: 200ms, 200ms;
+}
+
+.commande-button:hover {
+  background-color: #0063cc;
+  border-color: #004a99;
 }
 
 /************* mobile design *************/
@@ -73,6 +85,14 @@ header .logo img {
   width: 200px;
 }
 
+header a {
+  color: #000;
+}
+
+header .home-icon {
+  font-size: 3.3rem;
+}
+
 @media only screen and (max-width: 760px) {
   header {
     padding: 20px;
@@ -81,7 +101,7 @@ header .logo img {
 
 .produit {
   padding: 0 50px;
-  margin: 50px 0;
+  margin: 0 0 50px;
 }
 
 .produit .container {
@@ -122,7 +142,7 @@ header .logo img {
 }
 
 .produit__commande {
-  margin: auto;
+  margin: 0 auto;
   max-width: 600px;
   width: 42%;
   text-transform: capitalize;
@@ -140,16 +160,7 @@ header .logo img {
   font-size: 1.1rem;
 }
 
-.produit__commande input:nth-child(-n+2) {
-  /* if its more then 49.5% it will go down to the line like diplay:block */
-  width: 49.5%;
-}
-
-.produit__commande input:nth-child(2) {
-  float: right;
-}
-
-.produit__commande input:nth-child(n+3):not([type="submit"]):not([type="number"]) {
+.produit__commande input:not([type="submit"]):not([type="number"]) {
   display: block;
   width: 100%;
 }
@@ -166,17 +177,30 @@ header .logo img {
 
 .produit__commande input[type="submit"] {
   display: block;
-  padding: 15px 30px;
+  padding: 15px 20px;
   border-radius: 7px;
   border: 2px solid #296e2c;
   color: #fff;
-  font-size: 1.2rem;
-  background-color: #4d9350;
+  font-size: 1.1rem;
+  background-color: #29a847;
   cursor: pointer;
+  -webkit-transition: background-color 200ms;
+  transition: background-color 200ms;
+}
+
+.produit__commande input[type="submit"]:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+  background-color: #1f7f35;
 }
 
 .produit__commande label {
   font-weight: bold;
+}
+
+.produit .display-phone {
+  width: 100%;
+  display: none;
 }
 
 /************* mobile design *************/
@@ -194,6 +218,14 @@ header .logo img {
   .produit input:nth-child(-n+2) {
     float: none;
     width: 100%;
+  }
+  .produit .display-phone {
+    width: 100%;
+    display: inline-block;
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+    text-align: center;
   }
 }
 
@@ -244,4 +276,21 @@ footer .mg-bottom {
             align-items: start;
     grid-gap: 40px;
   }
+}
+
+.social-media {
+  font-size: 2rem;
+}
+
+.social-media a {
+  margin-right: 10px;
+  color: #fff;
+}
+
+.social-media .fa-facebook:hover {
+  color: #1875ea;
+}
+
+.social-media .fa-instagram:hover {
+  color: #d4465c;
 }

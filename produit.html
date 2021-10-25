@@ -20,11 +20,11 @@
 <body>
     <header>
         <div class="logo">
-            <a href=""><img src="images/logo.png" alt=""></a>
+            <a href="/home.html"><img src="images/logo.png" alt=""></a>
         </div>
 
         <div class="home-icon">
-            <a href=""><img src="images/home.png" alt=""></a>
+            <a href="/home.html"><i class="fas fa-home"></i></a>
         </div>
     </header>
 
@@ -47,19 +47,19 @@
                 </p>
                 <!-- </div> -->
             </div>
-            <div class="produit__commande">
+            <div class="produit__commande" id="form">
                 <h2>pour commader ce produit veuillez remplire ce formulaire</h2>
                 <form action="" method="post">
-                    <input type="text" placeholder="Nom">
-                    <input type="text" placeholder="Prenom">
+                    <input type="text" placeholder="Nom et Prenom">
                     <input type="text" placeholder="Adress">
                     <input type="text" placeholder="Numero De Telephone">
                     <input type="text" placeholder="Second Numero De Telephone (optionel)">
                     <label for="">Quantité: </label>
                     <input type="number" value="1" min="1">
-                    <input type="submit">
+                    <input type="submit" value="Commander">
                 </form>
             </div>
+            <a href="#form" class="commande-button display-phone">أطلب الأن</a>
         </div>
     </section>
 
@@ -76,12 +76,34 @@
 
             <div>
                 <p class="mg-bottom">ou bien sur nos résaux sociaux:</p>
-                <a href=""><i class="fab fa-facebook"></i></a>
-                <a href=""><i class="fab fa-instagram"></i></a>
+                <div class="social-media">
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
 
         </div>
     </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        function showStuff(id, text, btn) {
+            document.getElementById(id).style.display = 'block';
+            // hide the lorem ipsum text
+            document.getElementById(text).style.display = 'none';
+            // hide the link
+            btn.style.display = 'none';
+        }
+    </script>
 
 </body>
 

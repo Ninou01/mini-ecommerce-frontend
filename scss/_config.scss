@@ -1,10 +1,5 @@
 :root {
-    --black: #333;
-    --green: #10cab7;
-    --blue: #00E1FF;
     --grey: #E6E6E6;
-    --bold: #2B3C47;
-    --text: #545B6B;
 }
 
 *, 
@@ -15,7 +10,10 @@
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
-    font-family: 'Work Sans', sans-serif;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
 }
 
 a {
@@ -24,7 +22,7 @@ a {
 
 .section-title {
     text-align: center;
-    margin: 60px 0;
+    margin: 20px 0 60px;
 }
 
 .section-title .title {
@@ -38,12 +36,23 @@ a {
     text-decoration: line-through;
 }
 
-/************* tablet design *************/
-
-@media only screen and (max-width: 1024px) {
-    .container {
-        padding: 0 10px;
-    }
+.commande-button {
+        width: 80%;
+        padding: 15px 20px;
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: #fff;
+        background-color: hsl(211, 100%, 50%);
+        border: 2px solid hsl(211, 100%, 40%);
+        border-radius: 7px;
+        cursor: pointer;
+        transition-property: background-color, border-color;
+        transition-duration: 200ms, 200ms;
+    
+        &:hover {
+            background-color: hsl(211, 100%, 40%);
+            border-color: hsl(211, 100%, 30%);
+        }
 }
 
 /************* mobile design *************/
@@ -51,6 +60,16 @@ a {
 @media only screen and (max-width: 760px) {
     .section-title .title {
         font-size: 5rem;
+    }
+}
+
+
+@function text-color($color) {
+    @if(lightness($color) > 50){
+        @return #fff;
+    } 
+    @else {
+        @return #000;
     }
 }
 

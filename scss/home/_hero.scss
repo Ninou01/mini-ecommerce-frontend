@@ -7,14 +7,13 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: bottom;
-        height: 370px;
+        height: 170px;
         max-width: 1400px;
         margin: auto;
-        margin-bottom: 100px;
     }
 
     &__title {
-        padding: 40px 0 30px;
+        padding: 40px 0 27px;
         font-size: 3rem;
         color: #4caf50;
     }
@@ -22,6 +21,23 @@
     p {
         font-size: 1.4rem;
         font-weight: 600;
-        color: var(--black);
+        color: rgb(40, 40, 40);
     }
+}
+
+
+@media only screen and (max-width:760px) {
+
+    .hero {
+        margin-bottom: 50px;
+
+        &__title {
+            font-size: 2rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+    }
+    
 }

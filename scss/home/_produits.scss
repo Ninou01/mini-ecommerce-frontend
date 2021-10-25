@@ -24,6 +24,7 @@
             a {
                 display: block;
                 padding: 0 0 20px;
+                color: #222;
             }
 
             &-image {
@@ -40,9 +41,29 @@
             }
 
             &-price {
-                color: #222;
                 font-size: 1.3rem;
                 font-weight: 600;
+                margin-bottom: 15px;
+                display: inline-block;
+            }
+
+            button {
+                width: 80%;
+                padding: 15px 20px;
+                font-size: 1.3rem;
+                font-weight: bold;
+                color: #fff;
+                background-color: hsl(211, 100%, 50%);
+                border: 2px solid hsl(211, 100%, 40%);
+                border-radius: 7px;
+                cursor: pointer;
+                transition-property: background-color, border-color;
+                transition-duration: 200ms, 200ms;
+
+                &:hover {
+                    background-color: hsl(211, 100%, 40%);
+                    border-color: hsl(211, 100%, 30%);
+                }
             }
 
         }
@@ -66,9 +87,17 @@
 }
 
 @media only screen and (max-width:760px) {
-    
-    .produits__grid {
-        grid-template-columns: none;
-        padding: 0;
+
+    .produits{
+
+        .section-title {
+            display: none;
+        }
+        
+        &__grid {
+            grid-template-columns: none;
+            padding: 0;
+        }
     }
+    
 }

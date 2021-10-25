@@ -1,6 +1,6 @@
 .produit {
     padding: 0 50px;
-    margin: 50px 0;
+    margin: 0 0 50px;
 
     .container {
         display: flex;
@@ -37,7 +37,7 @@
     }
 
     &__commande {
-        margin: auto;
+        margin: 0 auto;
         max-width: 600px;
         width: 42%;
         text-transform: capitalize;
@@ -54,16 +54,7 @@
             font-size: 1.1rem;
         }
 
-        input:nth-child(-n+2) {
-            /* if its more then 49.5% it will go down to the line like diplay:block */
-            width: 49.5%;
-        }
-
-        input:nth-child(2) {
-            float: right;
-        }
-
-        input:nth-child(n+3):not([type="submit"]):not([type="number"]) {
+        input:not([type="submit"]):not([type="number"]) {
             display: block;
             width: 100%;
         }
@@ -80,18 +71,29 @@
 
         input[type="submit"] {
             display: block;
-            padding: 15px 30px;
+            padding: 15px 20px;
             border-radius: 7px;
             border: 2px solid #296e2c;
             color: #fff;
-            font-size: 1.2rem;
-            background-color: #4d9350;
+            font-size: 1.1rem;
+            background-color: hsl(134, 61%, 41%);
             cursor: pointer;
+            transition: background-color 200ms;
+
+            &:hover {
+                transform: scale(1.03);
+                background-color: hsl(134, 61%, 31%);
+            }
         }
 
         label {
             font-weight: bold;
         }
+    }
+
+    .display-phone {
+        width: 100%;
+        display: none;
     }
 }
 
@@ -113,7 +115,14 @@
             float: none;
             width: 100%;
         }
+
+        .display-phone {
+            width: 100%;
+            display: inline-block;
+            position: sticky;
+            bottom: 0;
+            text-align: center;
+        }
     }
     
 }
-

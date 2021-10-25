@@ -42,8 +42,27 @@ footer {
             flex-direction: column;
             align-items: start;
             grid-gap: 40px;
+            
+            
         }
+
     }
 }
 
+.social-media {
+    font-size: 2rem;
+    
+    a {
+        margin-right: 10px;
+        color: #fff;
+    }
+    
+    .fa-facebook:hover {
+        color: #1875ea;
+    }
+
+    .fa-instagram:hover {
+        color: #d4465c;
+    }
+}
 
