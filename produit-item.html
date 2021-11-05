@@ -12,42 +12,44 @@
 
 
     <!-- sections styles  -->
-    <link rel="stylesheet" href="css/produit-style.css">
+    <link rel="stylesheet" href="css/produit-item-style.css">
 
     <title>produit</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
 
 <body>
     <header>
         <div class="logo">
-            <a href="/home.html"><img src="images/logo.png" alt=""></a>
+            <a href="/shop.html"><img src="images/logo.png" alt=""></a>
         </div>
 
         <div class="home-icon">
-            <a href="/home.html"><i class="fas fa-home"></i></a>
+            <a href="/shop.html"><i class="fas fa-home"></i></a>
         </div>
     </header>
 
-    <section class="produit">
+    <section class="produit-item">
         <div class="container">
-            <div class="produit__detail">
+            <div class="produit-item__detail">
                 <!-- <div> -->
-                <div class="produit__image">
+                <div class="produit-item__image">
                     <img src="images/vaseline.jpg" alt="">
                 </div>
-                <h2 class="produit__name">Produit</h2>
-                <div class="produit__price">
-                    <span class="produit__price discount">500DA</span> -
-                    <span class="produit__price">500DA</span>
+                <h2 class="produit-item__name">Produit</h2>
+                <div class="produit-item__price">
+                    <span class="produit-item__price discount">500DA</span> -
+                    <span class="produit-item__price">500DA</span>
                 </div>
-                <p class="produit__description">
+                <p class="produit-item__description">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur unde impedit vel eos, cum
                     explicabo saepe ipsum, quam maxime quaerat accusamus animi nisi id harum blanditiis corrupti.
                     Facere, incidunt voluptatibus.
                 </p>
                 <!-- </div> -->
             </div>
-            <div class="produit__commande" id="form">
+            <div class="produit-item__commande" id="form">
                 <h2>pour commader ce produit veuillez remplire ce formulaire</h2>
                 <form action="" method="post">
                     <input type="text" placeholder="Nom et Prenom">
@@ -96,15 +98,16 @@
             });
         });
 
-        function showStuff(id, text, btn) {
-            document.getElementById(id).style.display = 'block';
-            // hide the lorem ipsum text
-            document.getElementById(text).style.display = 'none';
-            // hide the link
-            btn.style.display = 'none';
-        }
+        $(window).scroll(function () {
+            if ($(window).width() <= 760) {
+                if ($(this).scrollTop() > 600) {
+                    $('.display-phone').hide();
+                } else {
+                    $('.display-phone').fadeIn();
+                }
+            }
+        });
     </script>
-
 </body>
 
 </html>
